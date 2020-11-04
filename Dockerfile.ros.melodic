@@ -5,9 +5,9 @@
 ARG BASE_IMAGE=nvcr.io/nvidia/l4t-base:r32.4.3
 FROM ${BASE_IMAGE}
 
-ARG ROS_PKG=ros_base
-ENV ROS_DISTRO=melodic
-ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
+#ARG ROS_PKG=ros_base
+#ENV ROS_DISTRO=melodic
+#ENV ROS_ROOT=/opt/ros/melodic
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -42,7 +42,7 @@ RUN apt-get update && \
   
 # init/update rosdep
 RUN apt-get update && \
-    cd ${ROS_ROOT} && \
+    cd /opt/ros/melodic && \
     rosdep init && \
     rosdep update && \
     rm -rf /var/lib/apt/lists/*
