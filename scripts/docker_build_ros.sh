@@ -2,7 +2,7 @@
 
 set -e
 
-BASE_IMAGE="nvcr.io/nvidia/l4t-base:r32.4.3"
+BASE_IMAGE="nvcr.io/nvidia/l4t-base:r32.4.4"
 ROS_DISTRO=${1:-"all"}
 
 echo "building containers for $ROS_DISTRO..."
